@@ -27,3 +27,4 @@ Read before every piece of work. Add to it after every piece of work and every f
 - **Mixed DJI clips (H.264 + HEVC)** join cleanly with ffmpeg's concat filter after scaling each to the same size, SAR and frame rate.
 - **Artifact republish conflicts.** If the board was published elsewhere, merge that version (e.g. his title change) before republishing.
 - **Topic rows wrap on small phones.** Three topics fit on one line from 375px with 12.5px labels and .08em spacing; check 320px and accept a centred second line.
+- **White flash when pulling past the ends on a phone.** Set `html{background:#000}` (not just `body`) and `<meta name="theme-color" content="#000000">` so the overscroll area and phone browser bar stay black. Inside the claude.ai artifact viewer the outer frame may still show its own colour.

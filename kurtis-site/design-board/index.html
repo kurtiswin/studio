@@ -1,11 +1,11 @@
-<title>KurtisWin - Design Board</title>
+<title>KurtisWin - World Design Board</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="theme-color" content="#000000">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Instrument+Serif:ital@1&display=swap">
 <style>
-/* KurtisWin brand board: one black column. Header, foundations (colour, type, pieces), then the site itself on phone and laptop. */
+/* KurtisWin world board: header, "My world" tiles that filter the board, then each world's work (website first, then colour, type, pieces). */
 :root{
   --bg:#000; --panel:#000; --line:rgba(255,255,255,.12);
   --text:#fff; --muted:#b3b3b3; --gold:#FFC65C;
@@ -15,6 +15,7 @@
 }
 *{box-sizing:border-box}
 html{background:#000}
+[hidden]{display:none!important}
 body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:16px;font-weight:400;line-height:1.55;
   padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
 a{color:inherit}
@@ -74,16 +75,62 @@ h1 em{font-family:var(--serif);font-weight:400;font-style:italic;color:var(--gol
   text-decoration:none;font-weight:600;margin-top:20px;transition:box-shadow .25s}
 .open:hover{box-shadow:0 0 0 2px var(--gold)}
 @media (prefers-reduced-motion:reduce){.chip img,.btn,.pill,.open{transition:none}.chip:hover img,.btn:hover{transform:none}}
+
+.whead{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.showing{margin:0 0 16px;font-size:13px;color:var(--gold)}
+.worlds{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:18px;max-width:760px}
+.world{all:unset;box-sizing:border-box;display:flex;flex-direction:column;gap:10px;cursor:pointer;min-width:0;border-radius:16px;transition:opacity .25s}
+.world .tile{display:grid;place-items:center;aspect-ratio:1;width:100%;border-radius:18px;background:#000;overflow:hidden;
+  box-shadow:inset 0 0 0 1px var(--line);transition:box-shadow .25s,transform .45s cubic-bezier(.34,1.56,.64,1)}
+.world .tile img{width:100%;height:100%;object-fit:cover;display:block}
+.world .tile img.round{width:86%;height:86%;border-radius:50%}
+.world .todo{font-size:11px;line-height:1.3;color:var(--muted);text-align:center}
+.world .tile:has(.todo){box-shadow:inset 0 0 0 1px rgba(255,255,255,.28);background:repeating-linear-gradient(135deg,#000 0 8px,#0b0b0b 8px 16px)}
+.wname{font-size:13px;font-weight:500;line-height:1.3;color:var(--text)}
+.world:hover .tile{box-shadow:inset 0 0 0 1px var(--line),0 0 0 2px var(--gold);transform:scale(1.04) rotate(-3deg)}
+.world[aria-pressed="true"] .tile{box-shadow:0 0 0 2px var(--gold)}
+.worlds.filtered .world[aria-pressed="false"]{opacity:.4}
+.worlds.filtered .world[aria-pressed="false"]:hover{opacity:1}
+.world:focus-visible .tile{outline:3px solid var(--gold);outline-offset:3px}
+.emptytext{margin:0;font-size:17px;font-weight:300;max-width:52ch}
+@media (max-width:520px){.worlds{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px 12px}}
+@media (prefers-reduced-motion:reduce){.world .tile{transition:none}.world:hover .tile{transform:none}}
 </style>
 
 <main class="wrap">
   <header>
-    <p class="label">KurtisWin · Personal brand design board</p>
+    <p class="label">KurtisWin - World Building Design Board</p>
     <h1>Telling <em>beautiful</em> stories.</h1>
-    <p class="intro">The look and feel of everything KurtisWin: black, white and one touch of gold, Poppins with a serif italic for the words that matter, and plenty of space. Use it for the website, socials, thumbnails, Java Bonito, Stories from Football and anything else that's yours.</p>
   </header>
 
-  <section class="grid" aria-label="Foundations">
+  <section class="panel" aria-labelledby="world-h">
+    <div class="whead"><h2 class="label" id="world-h">My world</h2><p class="showing" aria-live="polite">Showing everything</p></div>
+    <div class="worlds" role="group" aria-label="Filter the board by world">
+        <button class="world" type="button" data-key="kurtiswin" aria-pressed="false"><span class="tile"><img src="assets/icon-kw.jpg" alt=""></span><span class="wname">KurtisWin</span></button>
+        <button class="world" type="button" data-key="java-bonito" aria-pressed="false"><span class="tile"><img src="assets/icon-jb.png" alt=""></span><span class="wname">Java Bonito</span></button>
+        <button class="world" type="button" data-key="woolton-fc" aria-pressed="false"><span class="tile"><img src="assets/icon-wfc.png" alt="" class=round></span><span class="wname">Woolton FC</span></button>
+        <button class="world" type="button" data-key="stories-from-football" aria-pressed="false"><span class="tile"><img src="assets/icon-sff.png" alt=""></span><span class="wname">Stories from Football</span></button>
+        <button class="world" type="button" data-key="kates-cafe" aria-pressed="false"><span class="tile"><span class="todo">Logo<br>to come</span></span><span class="wname">Kate's Cafe</span></button>
+    </div>
+    <p class="rule">Tap a world to see only its work. Tap it again to see everything.</p>
+  </section>
+
+  <section class="panel" aria-labelledby="site-h" data-world="kurtiswin">
+    <h2 class="label" id="site-h">KurtisWin · The website</h2>
+    <div class="site">
+      <div>
+        <div class="phone" tabindex="0" aria-label="Phone view of the site, scrollable"><img src="shots/site-phone.jpg" alt="The KurtisWin site on a phone: headline, social pills, story with project links, film and email sign-up" loading="lazy"></div>
+        <p class="cap">Phone · scroll inside</p>
+      </div>
+      <div>
+        <div class="laptop"><img src="shots/site-laptop.jpg" alt="The KurtisWin site on a laptop" loading="lazy"></div>
+        <p class="cap">Laptop</p>
+        <a class="open" href="site.html">Open the site <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="grid" aria-label="KurtisWin colour, type and pieces" data-world="kurtiswin">
     <div class="panel">
       <h2 class="label">Colour</h2>
       <div class="swatches">
@@ -119,18 +166,38 @@ h1 em{font-family:var(--serif);font-weight:400;font-style:italic;color:var(--gol
     </div>
   </section>
 
-  <section class="panel" aria-labelledby="site-h">
-    <h2 class="label" id="site-h">The website</h2>
-    <div class="site">
-      <div>
-        <div class="phone" tabindex="0" aria-label="Phone view of the site, scrollable"><img src="shots/site-phone.jpg" alt="The KurtisWin site on a phone: headline, social pills, story with project links, film and email sign-up" loading="lazy"></div>
-        <p class="cap">Phone · scroll inside</p>
-      </div>
-      <div>
-        <div class="laptop"><img src="shots/site-laptop.jpg" alt="The KurtisWin site on a laptop" loading="lazy"></div>
-        <p class="cap">Laptop</p>
-        <a class="open" href="site.html">Open the site <span aria-hidden="true">→</span></a>
-      </div>
-    </div>
+  <section class="panel empty" id="empty" hidden>
+    <p class="label">Nothing here yet</p>
+    <p class="emptytext">Nothing on the board for <span id="empty-name"></span> yet. Its website, brand and content will go here as we build them.</p>
   </section>
+
+
 </main>
+
+<script>
+(function(){
+  var keys=['kurtiswin','java-bonito','woolton-fc','stories-from-football','kates-cafe'];
+  var btns=[].slice.call(document.querySelectorAll('.world'));
+  var group=document.querySelector('.worlds');
+  var showing=document.querySelector('.showing');
+  var empty=document.getElementById('empty'), emptyName=document.getElementById('empty-name');
+  var sections=[].slice.call(document.querySelectorAll('[data-world]'));
+  function apply(key){
+    if(keys.indexOf(key)<0) key='';
+    var name='';
+    btns.forEach(function(b){var on=b.dataset.key===key;b.setAttribute('aria-pressed',on);if(on)name=b.querySelector('.wname').textContent;});
+    group.classList.toggle('filtered',!!key);
+    var shown=0;
+    sections.forEach(function(sec){var show=!key||sec.dataset.world.split(' ').indexOf(key)>=0;sec.hidden=!show;if(show)shown++;});
+    empty.hidden=!(key&&shown===0); emptyName.textContent=name;
+    showing.textContent=key?'Showing '+name:'Showing everything';
+  }
+  btns.forEach(function(b){b.addEventListener('click',function(){
+    var key=b.getAttribute('aria-pressed')==='true'?'':b.dataset.key;
+    if(key) location.hash=key; else { try{history.replaceState(null,'',location.pathname+location.search);}catch(e){location.hash='';} }
+    apply(key);
+  });});
+  addEventListener('hashchange',function(){apply(location.hash.slice(1));});
+  apply(location.hash.slice(1));
+})();
+</script>

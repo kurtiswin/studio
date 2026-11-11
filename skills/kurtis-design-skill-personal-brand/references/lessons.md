@@ -18,6 +18,8 @@ Read before every piece of work. Add to it after every piece of work and every f
 - **2026-11 · Gold for one word only.** "nine" went gold, then back to white; only "beautiful" in the headline stays gold.
 - **2026-11 · He'll rename things himself.** He renamed the board "KurtisWin - Design Board" outside the session. Keep his names.
 
+- **2026-11 · The board is a world, not just a brand.** It became "KurtisWin - World Building Design Board": a My world card of square logo tiles (KurtisWin photo, Java Bonito, Woolton FC, Stories from Football, Kate's Cafe) that filter the board, each world's work tagged `data-world`. New work for any project goes on this board under its world.
+
 ## Technical traps
 
 - **Inline icon chips look raised** when the link is `inline-flex`/`inline-grid`, and commas drift. Keep the link inline and make the icon an inline `img` at 1.4em with `vertical-align: -.36em` (Poppins), then measure.
@@ -28,3 +30,4 @@ Read before every piece of work. Add to it after every piece of work and every f
 - **Artifact republish conflicts.** If the board was published elsewhere, merge that version (e.g. his title change) before republishing.
 - **Topic rows wrap on small phones.** Three topics fit on one line from 375px with 12.5px labels and .08em spacing; check 320px and accept a centred second line.
 - **White flash when pulling past the ends on a phone.** Set `html{background:#000}` (not just `body`) and `<meta name="theme-color" content="#000000">` so the overscroll area and phone browser bar stay black. Inside the claude.ai artifact viewer the outer frame may still show its own colour.
+- **`hidden` loses to `display:grid`.** Add `[hidden]{display:none!important}` so filtered sections really hide.

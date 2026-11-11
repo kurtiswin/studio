@@ -55,3 +55,5 @@
 
 - 2026-11-06: Trial: email sign-up moved above the video (between story and video). Skill not updated until confirmed.
 
+- 2026-11-11: Board renamed 'KurtisWin - World Design Board'. Header label 'KurtisWin - World Building Design Board', intro removed. New My world card with filter tiles: KurtisWin (sunset photo), Java Bonito, Woolton FC, Stories from Football, Kate's Cafe (logo to come). Website card moved above colour/type/pieces; both tagged KurtisWin.
+

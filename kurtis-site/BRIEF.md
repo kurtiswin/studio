@@ -59,3 +59,5 @@
 
 - 2026-11-11: World panels added for Java Bonito, Woolton FC (website, web app, Woolton OS coming soon), Stories from Football (redesign + stadium coffee series) and Kurt's Café (renamed from Kate's Cafe), each with About, What I'm building and links to their boards/sites.
 
+- 2026-11-11: Other ideas section added under the KurtisWin website. Idea 1 · Simple letter (idea-simple.html), in the style of zackkravits.com, in the KurtisWin palette. Live site unchanged.
+

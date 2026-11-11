@@ -20,6 +20,8 @@ Read before every piece of work. Add to it after every piece of work and every f
 
 - **2026-11 · The board is a world, not just a brand.** It became "KurtisWin - World Building Design Board": a My world card of square logo tiles (KurtisWin photo, Java Bonito, Woolton FC, Stories from Football, Kate's Cafe) that filter the board, each world's work tagged `data-world`. New work for any project goes on this board under its world.
 
+- **2026-11 · New styles go in "Other ideas", never over the live site.** When Kurtis likes another creator's site, build a separate idea page in his palette and add it under KurtisWin · Other ideas on the World Building board. First one: Simple letter, after zackkravits.com.
+
 ## Technical traps
 
 - **Inline icon chips look raised** when the link is `inline-flex`/`inline-grid`, and commas drift. Keep the link inline and make the icon an inline `img` at 1.4em with `vertical-align: -.36em` (Poppins), then measure.

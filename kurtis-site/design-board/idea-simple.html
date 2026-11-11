@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#000000">
+<title>KurtisWin · Simple letter</title>
+<meta name="description" content="Kurtis Windrow tells beautiful stories and builds things that help people chase their dreams.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&family=Instrument+Serif:ital@1&display=swap">
+<style>
+/* Idea · Simple letter. After zackkravits.com: a name top left, one narrow column of short paragraphs,
+   plain text links, a tiny footer bottom right. Nothing else. In the KurtisWin palette. */
+:root{
+  --bg:#000; --text:#fff; --muted:#a6a6a6; --gold:#FFC65C; --line:rgba(255,255,255,.35);
+  --sans:"Poppins",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
+  --serif:"Instrument Serif",Georgia,"Times New Roman",serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{background:var(--bg);-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:300;font-size:clamp(16px,1.25vw,18px);line-height:1.7;
+  min-height:100vh;min-height:100svh;display:flex;flex-direction:column;
+  padding:clamp(32px,5vw,56px) max(24px,env(safe-area-inset-right,0px)) clamp(28px,4vw,48px) max(24px,env(safe-area-inset-left,0px))}
+@media (min-width:900px){body{padding-left:56px;padding-right:56px}}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:4px;border-radius:2px}
+
+.name{margin:0;font-size:13px;font-weight:500;letter-spacing:.42em;text-transform:uppercase}
+.name em{font-style:normal;color:var(--gold)}
+
+main{margin-top:clamp(72px,14vh,140px);max-width:27em}
+main p{margin:0 0 1.45em;text-wrap:pretty}
+.serif{font-family:var(--serif);font-style:italic;font-size:1.2em;line-height:1}
+.serif.gold{color:var(--gold)}
+main a{text-decoration:underline;text-decoration-color:var(--line);text-decoration-thickness:1px;text-underline-offset:4px;transition:text-decoration-color .2s,color .2s}
+main a:hover{text-decoration-color:var(--gold)}
+
+.contact{display:flex;gap:2.4em;margin-top:2.6em}
+.contact a{text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:4px;transition:text-decoration-color .2s}
+.contact a span{display:inline-block;margin-left:.35em;text-decoration:none;color:var(--gold);transition:transform .25s cubic-bezier(.2,.7,.2,1)}
+.contact a:hover{text-decoration-color:var(--gold)}
+.contact a:hover span{transform:translateX(3px)}
+
+footer{margin-top:auto;padding-top:64px;align-self:flex-end;font-size:12px;color:var(--muted)}
+
+.rise{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+.d1{animation-delay:.1s}.d2{animation-delay:.2s}.d3{animation-delay:.3s}.d4{animation-delay:.4s}.d5{animation-delay:.5s}.d6{animation-delay:.6s}
+@keyframes rise{from{opacity:.001;transform:translateY(10px)}}
+@media (prefers-reduced-motion:reduce){.rise{animation:none}main a,.contact a,.contact a span{transition:none}}
+
+.back{position:fixed;left:max(12px,env(safe-area-inset-left,0px));bottom:calc(12px + env(safe-area-inset-bottom,0px));font-size:11px;letter-spacing:.08em;text-transform:uppercase;
+  background:rgba(30,30,30,.85);padding:8px 12px;border-radius:999px;text-decoration:none;color:var(--muted);z-index:5}
+</style>
+</head>
+<body>
+<header class="rise"><p class="name">Kurtis<em>Win</em></p></header>
+
+<main>
+  <p class="rise d1">I tell <span class="serif gold">beautiful</span> stories.</p>
+  <p class="rise d2">I got injured at <span class="serif">nine</span> and never got to chase the dream. So now I build things that help other people chase theirs.</p>
+  <p class="rise d3">Most of my time goes to <a href="https://www.javabonito.co.uk" target="_blank" rel="noopener">Java Bonito</a>, coffee that gives 5% back to support dreams, and coaching at <a href="https://www.wooltonfc.co.uk" target="_blank" rel="noopener">Woolton FC</a>, the largest grassroots club in the UK.</p>
+  <p class="rise d4">The rest goes to <a href="https://www.storiesfromfootball.co.uk" target="_blank" rel="noopener">Stories from Football</a>, because everyone has a beautiful story to tell.</p>
+  <div class="contact rise d5">
+    <a href="https://youtube.com/@kurtiswin" target="_blank" rel="noopener">Watch me<span aria-hidden="true">›</span></a>
+    <a href="https://www.instagram.com/kurtiswin" target="_blank" rel="noopener">DM me<span aria-hidden="true">›</span></a>
+  </div>
+</main>
+
+<footer class="rise d6">© 2026 Kurtis Windrow</footer>
+<a class="back" href="index.html">← World Building</a>
+</body>
+</html>

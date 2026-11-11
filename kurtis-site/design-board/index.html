@@ -3,7 +3,7 @@
 <meta name="theme-color" content="#000000">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Instrument+Serif:ital@1&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&display=swap">
 <style>
 /* KurtisWin world board: header, "My world" tiles that filter the board, then each world's work (website first, then colour, type, pieces). */
 :root{
@@ -97,6 +97,9 @@ h1 em{font-family:var(--serif);font-weight:400;font-style:italic;color:var(--gol
 @media (prefers-reduced-motion:reduce){.world .tile{transition:none}.world:hover .tile{transform:none}}
 
 .world .tile.cup,.wp-ico.cup{color:var(--gold)}
+.sqlogo{display:block;width:100%;height:100%}
+.tile.sq .sqlogo rect{fill:none}
+.wp-ico.sq{overflow:hidden}
 .world .tile.cup svg{width:62%;height:62%}
 .wp{display:flex;flex-direction:column;gap:26px}
 .wp-head{display:flex;gap:18px;align-items:center}
@@ -152,7 +155,7 @@ h1 em{font-family:var(--serif);font-weight:400;font-style:italic;color:var(--gol
         <button class="world" type="button" data-key="java-bonito" aria-pressed="false"><span class="tile"><img src="assets/icon-jb.png" alt=""></span><span class="wname">Java Bonito</span></button>
         <button class="world" type="button" data-key="woolton-fc" aria-pressed="false"><span class="tile"><img src="assets/icon-wfc.png" alt="" class=round></span><span class="wname">Woolton FC</span></button>
         <button class="world" type="button" data-key="stories-from-football" aria-pressed="false"><span class="tile"><img src="assets/icon-sff.png" alt=""></span><span class="wname">Stories from Football</span></button>
-        <button class="world" type="button" data-key="kurts-cafe" aria-pressed="false"><span class="tile cup"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="32" cy="49" rx="21" ry="4.2"/><path d="M16 27h32c0 11-6.5 18-16 18s-16-7-16-18z"/><path d="M48 30.5h2a5 5 0 0 1 0 10h-3.2"/><ellipse cx="32" cy="27" rx="16" ry="3.4"/><path d="M32 31.5c-3-2.6-6 .6-3.2 2.8L32 37l3.2-2.7c2.8-2.2-.2-5.4-3.2-2.8z"/></svg></span><span class="wname">Kurt's Café</span></button>
+        <button class="world" type="button" data-key="kurts-cafe" aria-pressed="false"><span class="tile sq"><svg class="sqlogo" viewBox="0 0 100 100" role="img" aria-label="Kurt's Café"><rect width="100" height="100" fill="#000"/><text x="50" y="47" text-anchor="middle" font-family="Instrument Serif, Georgia, serif" font-size="27" fill="#fff">Kurt's</text><text x="50" y="74" text-anchor="middle" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="29" fill="#FFC65C">Café</text></svg></span><span class="wname">Kurt's Café</span></button>
     </div>
     <p class="rule">Tap a world to see only its work. Tap it again to see everything.</p>
   </section>
@@ -264,7 +267,7 @@ h1 em{font-family:var(--serif);font-weight:400;font-style:italic;color:var(--gol
   </section>
 
   <section class="panel wp" data-world="kurts-cafe">
-    <div class="wp-head"><span class="wp-ico cup"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="32" cy="49" rx="21" ry="4.2"/><path d="M16 27h32c0 11-6.5 18-16 18s-16-7-16-18z"/><path d="M48 30.5h2a5 5 0 0 1 0 10h-3.2"/><ellipse cx="32" cy="27" rx="16" ry="3.4"/><path d="M32 31.5c-3-2.6-6 .6-3.2 2.8L32 37l3.2-2.7c2.8-2.2-.2-5.4-3.2-2.8z"/></svg></span><div><p class="label">Owner</p><h2 class="wp-name">Kurt's Café</h2></div></div><p class="wp-line">Pull up a chair. A calm, one-person digital coffee shop: websites and content systems for small businesses, clubs and local people, with Java Bonito as the real coffee.</p>
+    <div class="wp-head"><span class="wp-ico sq"><svg class="sqlogo" viewBox="0 0 100 100" role="img" aria-label="Kurt's Café"><rect width="100" height="100" fill="#000"/><text x="50" y="47" text-anchor="middle" font-family="Instrument Serif, Georgia, serif" font-size="27" fill="#fff">Kurt's</text><text x="50" y="74" text-anchor="middle" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="29" fill="#FFC65C">Café</text></svg></span><div><p class="label">Owner</p><h2 class="wp-name">Kurt's Café</h2></div></div><p class="wp-line">Digital coffee shop. A human touch in an AI world: a calm, one-person consultancy building websites and content systems for small businesses, clubs and local people, with Java Bonito as the real coffee.</p>
     <div class="wp-cols">
       <div><p class="label">How it works</p><ul class="facts"><li><b>A menu, not a pitch:</b> every offer is a drink with its price on the page</li><li><b>On the menu:</b> Matchday Coffee, Regulars, Café Kit, Build-along, A Morning with Kurt, House Build, Club Pack, and Your Own App (coming soon)</li><li><b>No sales calls:</b> pick from the menu, answer five questions, start</li><li><b>On the walls:</b> Woolton FC, Alex Windrow Weddings and Java Bonito as the first case studies</li></ul></div>
       <div><p class="label">What I'm building</p><ul class="builds"><li><div><b>Kurt's Café website</b><span>Menu card, how ordering works, case studies, monthly receipts and the morning brew newsletter</span></div><em class="st design">Designed</em></li><li><div><b>Payments and sign-up</b><span>Stripe links for each offer and the Kit newsletter form</span></div><em class="st plan">To connect</em></li></ul></div>

@@ -57,3 +57,5 @@
 
 - 2026-11-11: Board renamed 'KurtisWin - World Design Board'. Header label 'KurtisWin - World Building Design Board', intro removed. New My world card with filter tiles: KurtisWin (sunset photo), Java Bonito, Woolton FC, Stories from Football, Kate's Cafe (logo to come). Website card moved above colour/type/pieces; both tagged KurtisWin.
 
+- 2026-11-11: World panels added for Java Bonito, Woolton FC (website, web app, Woolton OS coming soon), Stories from Football (redesign + stadium coffee series) and Kurt's Café (renamed from Kate's Cafe), each with About, What I'm building and links to their boards/sites.
+

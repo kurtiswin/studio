@@ -95,6 +95,37 @@ h1 em{font-family:var(--serif);font-weight:400;font-style:italic;color:var(--gol
 .emptytext{margin:0;font-size:17px;font-weight:300;max-width:52ch}
 @media (max-width:520px){.worlds{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px 12px}}
 @media (prefers-reduced-motion:reduce){.world .tile{transition:none}.world:hover .tile{transform:none}}
+
+.world .tile.cup,.wp-ico.cup{color:var(--gold)}
+.world .tile.cup svg{width:62%;height:62%}
+.wp{display:flex;flex-direction:column;gap:26px}
+.wp-head{display:flex;gap:18px;align-items:center}
+.wp-head .label{margin:0 0 4px}
+.wp-ico{flex:0 0 72px;width:72px;height:72px;border-radius:18px;object-fit:cover;background:#000;box-shadow:0 0 0 1px var(--line);display:grid;place-items:center}
+.wp-ico.round{border-radius:50%;box-shadow:none}
+.wp-ico.cup svg{width:46px;height:46px}
+.wp-name{margin:0;font-size:clamp(1.6rem,4vw,2.2rem);font-weight:600;letter-spacing:-.03em;line-height:1.1}
+.wp-line{margin:-8px 0 0;font-weight:300;color:var(--muted);max-width:60ch;text-wrap:pretty}
+.wp-cols{display:grid;gap:28px;grid-template-columns:minmax(0,1fr)}
+@media (min-width:880px){.wp-cols{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px}}
+.facts{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;font-weight:300;font-size:15px;line-height:1.6}
+.facts li{padding-left:16px;position:relative}
+.facts li::before{content:"";position:absolute;left:0;top:.72em;width:5px;height:5px;border-radius:50%;background:var(--gold)}
+.facts b{font-weight:500}
+.builds{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.builds li{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;padding:14px 0;border-top:1px solid var(--line)}
+.builds li:last-child{border-bottom:1px solid var(--line)}
+.builds div{display:flex;flex-direction:column;gap:3px;min-width:0}
+.builds b{font-weight:500}
+.builds span{font-weight:300;font-size:14px;color:var(--muted);line-height:1.55}
+.st{flex:none;font-style:normal;font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;padding:5px 10px;border-radius:999px;box-shadow:inset 0 0 0 1px var(--line);color:var(--muted);white-space:nowrap}
+.st.built{color:var(--gold);box-shadow:inset 0 0 0 1px rgba(255,198,92,.6)}
+.st.soon{border:1px dashed rgba(255,255,255,.3);box-shadow:none}
+.wp-links{display:flex;flex-wrap:wrap;gap:10px}
+.wp-links .open{margin-top:0}
+.open.ghost{font-weight:500;color:var(--muted)}
+.open.ghost:hover{color:var(--text)}
+@media (max-width:520px){.wp-links .open{width:100%;justify-content:space-between;white-space:nowrap}.builds li{flex-direction:column;gap:8px}.wp-head{align-items:flex-start}.wp-ico{flex-basis:56px;width:56px;height:56px;border-radius:14px}}
 </style>
 
 <main class="wrap">
@@ -110,7 +141,7 @@ h1 em{font-family:var(--serif);font-weight:400;font-style:italic;color:var(--gol
         <button class="world" type="button" data-key="java-bonito" aria-pressed="false"><span class="tile"><img src="../icons/icon-jb.png" alt=""></span><span class="wname">Java Bonito</span></button>
         <button class="world" type="button" data-key="woolton-fc" aria-pressed="false"><span class="tile"><img src="../icons/icon-wfc.png" alt="" class=round></span><span class="wname">Woolton FC</span></button>
         <button class="world" type="button" data-key="stories-from-football" aria-pressed="false"><span class="tile"><img src="../icons/icon-sff.png" alt=""></span><span class="wname">Stories from Football</span></button>
-        <button class="world" type="button" data-key="kates-cafe" aria-pressed="false"><span class="tile"><span class="todo">Logo<br>to come</span></span><span class="wname">Kate's Cafe</span></button>
+        <button class="world" type="button" data-key="kurts-cafe" aria-pressed="false"><span class="tile cup"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="32" cy="49" rx="21" ry="4.2"/><path d="M16 27h32c0 11-6.5 18-16 18s-16-7-16-18z"/><path d="M48 30.5h2a5 5 0 0 1 0 10h-3.2"/><ellipse cx="32" cy="27" rx="16" ry="3.4"/><path d="M32 31.5c-3-2.6-6 .6-3.2 2.8L32 37l3.2-2.7c2.8-2.2-.2-5.4-3.2-2.8z"/></svg></span><span class="wname">Kurt's Café</span></button>
     </div>
     <p class="rule">Tap a world to see only its work. Tap it again to see everything.</p>
   </section>
@@ -166,6 +197,42 @@ h1 em{font-family:var(--serif);font-weight:400;font-style:italic;color:var(--gol
     </div>
   </section>
 
+  <section class="panel wp" data-world="java-bonito">
+    <div class="wp-head"><img class="wp-ico" src="../icons/icon-jb.png" alt="Java Bonito logo"><div><p class="label">Founder</p><h2 class="wp-name">Java Bonito</h2></div></div><p class="wp-line">Coffee for football. Supporting dreams, by giving 5% back from every coffee we sell.</p>
+    <div class="wp-cols">
+      <div><p class="label">About</p><ul class="facts"><li><b>Why:</b> 5% of every sale goes back to football: a pair of boots, a ball, a training session, or a dream trip to see a favourite team. "It's what 9 year old me would have wanted."</li><li><b>The Beautiful Game</b> · from £9.99 · medium · chocolate, sweet, smooth · a blend from Brazil (Fazenda Nunes) and Uganda (Katanda Community)</li><li><b>Brazil's No. 10</b> · from £8.99 · medium-light · cocoa, dates, toffee · Brazilian Bourbon and Catuai, natural process</li><li><b>Roasted</b> Monday and Thursday, <b>sent out</b> Wednesday and Friday with Royal Mail</li><li><b>For businesses</b> (javabonito.co): coffee supply for cafés and partners, with marketing tied to a good cause</li></ul></div>
+      <div><p class="label">What I'm building</p><ul class="builds"><li><div><b>Shopify store update</b><span>Café Nice-style product cards, footer links and email sign-up</span></div><em class="st built">Built · to go live</em></li><li><div><b>Next store ideas</b><span>Headline on the video, free-delivery strip, swipeable coffees, split banner, roast days, KurtisWin-style buttons</span></div><em class="st wait">Awaiting your OK</em></li><li><div><b>Truck menu</b><span>Menu board for the coffee truck</span></div><em class="st design">Designed</em></li></ul></div>
+    </div>
+    <div class="wp-links"><a class="open" href="https://claude.ai/artifact/9WRs4bKoAtdj5eqeFAUBrv" target="_blank" rel="noopener">Java Bonito board <span aria-hidden="true">→</span></a><a class="open ghost" href="https://www.javabonito.co.uk" target="_blank" rel="noopener">Shop · javabonito.co.uk <span aria-hidden="true">↗</span></a><a class="open ghost" href="https://javabonito.co" target="_blank" rel="noopener">For business · javabonito.co <span aria-hidden="true">↗</span></a></div>
+  </section>
+
+  <section class="panel wp" data-world="woolton-fc">
+    <div class="wp-head"><img class="wp-ico round" src="../icons/icon-wfc.png" alt="MSB Woolton FC crest"><div><p class="label">Coach</p><h2 class="wp-name">Woolton FC</h2></div></div><p class="wp-line">The largest grassroots football club in the UK.</p>
+    <div class="wp-cols">
+      <div><p class="label">About</p><ul class="facts"><li><b>Volunteer coach</b> at the club for 13 years</li><li><b>Football for All</b> every Saturday, 9am at Camp Hill</li><li><b>Grounds:</b> Camp Hill and the Simpson Ground</li><li><b>Club of the Year</b>, Liverpool County FA Grassroots Awards</li></ul></div>
+      <div><p class="label">What I'm building</p><ul class="builds"><li><div><b>New website</b><span>The whole tree, falling oak leaves, a spinning crest, fixtures and a contact form. Moving wooltonfc.co.uk off Carrd.</span></div><em class="st built">Built · going live</em></li><li><div><b>New web app</b><span>The club app (app.wooltonfc.co.uk) rebuilt in the website's look, replacing the Glide app. Saved to the home screen, no login.</span></div><em class="st design">Designed</em></li><li><div><b>Woolton OS</b><span>An operating system for running the club.</span></div><em class="st soon">Coming soon</em></li></ul></div>
+    </div>
+    <div class="wp-links"><a class="open" href="https://claude.ai/artifact/55uk9Lizc86mSHPxK9TEYQ" target="_blank" rel="noopener">Woolton FC board <span aria-hidden="true">→</span></a><a class="open ghost" href="https://www.wooltonfc.co.uk" target="_blank" rel="noopener">wooltonfc.co.uk <span aria-hidden="true">↗</span></a></div>
+  </section>
+
+  <section class="panel wp" data-world="stories-from-football">
+    <div class="wp-head"><img class="wp-ico" src="../icons/icon-sff.png" alt="Stories from Football logo"><div><p class="label">Founder</p><h2 class="wp-name">Stories from Football</h2></div></div><p class="wp-line">Connecting the world through conversation, because everyone has a beautiful story to tell.</p>
+    <div class="wp-cols">
+      <div><p class="label">The story so far</p><ul class="facts"><li><b>Stories told:</b> Me, Local Youth Fiji, John Barnes, Dan, Francisco, Alex, Ronaldo, Joe, Ian, The Youth, AS Roma fans</li><li><b>Channels:</b> @footballtransformation on Instagram, TikTok and YouTube</li><li><b>The site today:</b> a simple gallery of videos linking to YouTube</li></ul></div>
+      <div><p class="label">What I'm building</p><ul class="builds"><li><div><b>New content series</b><span>Making coffee for people outside football stadiums and chatting with them: their stories, told over Java Bonito coffee.</span></div><em class="st plan">In planning</em></li><li><div><b>New website</b><span>A complete redesign, starting again from scratch around the new series.</span></div><em class="st plan">Starting from scratch</em></li></ul></div>
+    </div>
+    <div class="wp-links"><a class="open ghost" href="https://www.storiesfromfootball.co.uk" target="_blank" rel="noopener">storiesfromfootball.co.uk <span aria-hidden="true">↗</span></a><a class="open ghost" href="https://youtube.com/@FootballTransformation" target="_blank" rel="noopener">YouTube <span aria-hidden="true">↗</span></a></div>
+  </section>
+
+  <section class="panel wp" data-world="kurts-cafe">
+    <div class="wp-head"><span class="wp-ico cup"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="32" cy="49" rx="21" ry="4.2"/><path d="M16 27h32c0 11-6.5 18-16 18s-16-7-16-18z"/><path d="M48 30.5h2a5 5 0 0 1 0 10h-3.2"/><ellipse cx="32" cy="27" rx="16" ry="3.4"/><path d="M32 31.5c-3-2.6-6 .6-3.2 2.8L32 37l3.2-2.7c2.8-2.2-.2-5.4-3.2-2.8z"/></svg></span><div><p class="label">Owner</p><h2 class="wp-name">Kurt's Café</h2></div></div><p class="wp-line">Pull up a chair. A calm, one-person digital coffee shop: websites and content systems for small businesses, clubs and local people, with Java Bonito as the real coffee.</p>
+    <div class="wp-cols">
+      <div><p class="label">How it works</p><ul class="facts"><li><b>A menu, not a pitch:</b> every offer is a drink with its price on the page</li><li><b>On the menu:</b> Matchday Coffee, Regulars, Café Kit, Build-along, A Morning with Kurt, House Build, Club Pack, and Your Own App (coming soon)</li><li><b>No sales calls:</b> pick from the menu, answer five questions, start</li><li><b>On the walls:</b> Woolton FC, Alex Windrow Weddings and Java Bonito as the first case studies</li></ul></div>
+      <div><p class="label">What I'm building</p><ul class="builds"><li><div><b>Kurt's Café website</b><span>Menu card, how ordering works, case studies, monthly receipts and the morning brew newsletter</span></div><em class="st design">Designed</em></li><li><div><b>Payments and sign-up</b><span>Stripe links for each offer and the Kit newsletter form</span></div><em class="st plan">To connect</em></li></ul></div>
+    </div>
+    <div class="wp-links"><a class="open" href="https://claude.ai/artifact/EAAyF8k6TTfeZfvTCKXzCV" target="_blank" rel="noopener">Kurt's Café board <span aria-hidden="true">→</span></a></div>
+  </section>
+
   <section class="panel empty" id="empty" hidden>
     <p class="label">Nothing here yet</p>
     <p class="emptytext">Nothing on the board for <span id="empty-name"></span> yet. Its website, brand and content will go here as we build them.</p>
@@ -176,7 +243,7 @@ h1 em{font-family:var(--serif);font-weight:400;font-style:italic;color:var(--gol
 
 <script>
 (function(){
-  var keys=['kurtiswin','java-bonito','woolton-fc','stories-from-football','kates-cafe'];
+  var keys=['kurtiswin','java-bonito','woolton-fc','stories-from-football','kurts-cafe'];
   var btns=[].slice.call(document.querySelectorAll('.world'));
   var group=document.querySelector('.worlds');
   var showing=document.querySelector('.showing');

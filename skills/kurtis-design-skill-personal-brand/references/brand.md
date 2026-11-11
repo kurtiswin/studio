@@ -155,3 +155,13 @@ Apply the same system; these are starting points to confirm with Kurtis.
 - **Slides:** black, one idea per slide, headline style for titles, Poppins Light body, gold icons only.
 - **Email:** black header band with the headline style, white body on black, black "Read more →" button with a hairline.
 - Photos: Kurtis likes moody, slightly darkened, cinematic images that sit into black (his sunset keepy-ups photo is the profile picture).
+
+## 9. My world (the projects under KurtisWin)
+
+The KurtisWin - World Design Board (https://claude.ai/artifact/9Ed7nxsi3NBPYnCKfKz8pr) is Kurtis's one place to build his world. Each project has a tile and a panel; tiles filter the board.
+
+- **KurtisWin** (personal brand): website, colour, type, pieces. Later: Storytelling Board, North Star / perfect week.
+- **Java Bonito** (founder): coffee for football, 5% back to support dreams. Shop javabonito.co.uk (Shopify), trade site javabonito.co. Board: https://claude.ai/artifact/9WRs4bKoAtdj5eqeFAUBrv
+- **Woolton FC** (volunteer coach, 13 years): new website, new web app (replacing Glide), Woolton OS (coming soon). Board: https://claude.ai/artifact/55uk9Lizc86mSHPxK9TEYQ
+- **Stories from Football** (founder): full redesign from scratch around a new series making coffee for fans outside stadiums. Socials @footballtransformation.
+- **Kurt's Café** (owner): one-person digital coffee shop selling websites and content systems from a drinks menu. Board: https://claude.ai/artifact/EAAyF8k6TTfeZfvTCKXzCV

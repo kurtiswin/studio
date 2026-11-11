@@ -37,7 +37,7 @@ main p{margin:0 0 1.45em;text-wrap:pretty}
 main a{text-decoration:underline;text-decoration-color:var(--line);text-decoration-thickness:1px;text-underline-offset:4px;transition:text-decoration-color .2s,color .2s}
 main a:hover{text-decoration-color:var(--gold)}
 
-.contact{display:flex;gap:2.4em;margin-top:2.6em}
+.contact{display:flex;gap:2.4em}
 .contact a{text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:4px;transition:text-decoration-color .2s}
 .contact a span{display:inline-block;margin-left:.35em;text-decoration:none;color:var(--gold);transition:transform .25s cubic-bezier(.2,.7,.2,1)}
 .contact a:hover{text-decoration-color:var(--gold)}
@@ -52,6 +52,19 @@ footer{margin-top:auto;padding-top:64px;align-self:flex-end;font-size:12px;color
 
 .back{position:fixed;left:max(12px,env(safe-area-inset-left,0px));bottom:calc(12px + env(safe-area-inset-bottom,0px));font-size:11px;letter-spacing:.08em;text-transform:uppercase;
   background:rgba(30,30,30,.85);padding:8px 12px;border-radius:999px;text-decoration:none;color:var(--muted);z-index:5}
+
+.join{margin-top:2.4em;max-width:24em}
+.join label{display:block;margin-bottom:.6em}
+.join-row{display:flex;align-items:center;gap:1.2em;border-bottom:1px solid var(--line);transition:border-color .2s}
+.join-row:focus-within{border-color:var(--gold)}
+.join input{flex:1 1 0;min-width:0;height:48px;background:transparent;border:0;color:var(--text);font:inherit;padding:0}
+.join input::placeholder{color:#7d7d7d}
+.join input:focus{outline:none}
+.join button{flex:none;background:none;border:0;color:var(--text);font:inherit;font-weight:400;cursor:pointer;padding:12px 0}
+.join button span,.contact a span{display:inline-block;margin-left:.35em;color:var(--gold);transition:transform .25s cubic-bezier(.2,.7,.2,1)}
+.join button:hover span{transform:translateX(3px)}
+.ok{margin:1em 0 0;color:var(--gold)}
+.contact{margin-top:2em}
 </style>
 </head>
 <body>
@@ -62,13 +75,23 @@ footer{margin-top:auto;padding-top:64px;align-self:flex-end;font-size:12px;color
   <p class="rise d2">I got injured at <span class="serif">nine</span> and never got to chase the dream. So now I build things that help other people chase theirs.</p>
   <p class="rise d3">Most of my time goes to <a href="https://www.javabonito.co.uk" target="_blank" rel="noopener">Java Bonito</a>, coffee that gives 5% back to support dreams, and coaching at <a href="https://www.wooltonfc.co.uk" target="_blank" rel="noopener">Woolton FC</a>, the largest grassroots club in the UK.</p>
   <p class="rise d4">The rest goes to <a href="https://www.storiesfromfootball.co.uk" target="_blank" rel="noopener">Stories from Football</a>, because everyone has a beautiful story to tell.</p>
-  <div class="contact rise d5">
-    <a href="https://youtube.com/@kurtiswin" target="_blank" rel="noopener">Watch me<span aria-hidden="true">›</span></a>
-    <a href="https://www.instagram.com/kurtiswin" target="_blank" rel="noopener">DM me<span aria-hidden="true">›</span></a>
+  <form class="join rise d5" data-kit>
+    <label for="s-email">Get the next story in your inbox.</label>
+    <div class="join-row">
+      <input id="s-email" type="email" name="email_address" placeholder="name@email.com" autocomplete="email" required>
+      <button type="submit">Sign up<span aria-hidden="true">›</span></button>
+    </div>
+  </form>
+  <p class="ok" hidden>You're in. Check your inbox to confirm.</p>
+  <div class="contact rise d6">
+    <a href="mailto:kurtis@javabonito.co.uk">Email me<span aria-hidden="true">›</span></a>
   </div>
 </main>
 
 <footer class="rise d6">© 2026 Kurtis Windrow</footer>
 <a class="back" href="index.html">← World Building</a>
+<script>
+document.querySelectorAll('form[data-kit]').forEach(function(f){f.addEventListener('submit',function(e){e.preventDefault();f.hidden=true;f.nextElementSibling.hidden=false;});});
+</script>
 </body>
 </html>

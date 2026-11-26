@@ -83,3 +83,5 @@
 
 - 2026-11-26: kurtiswin.com top spacing now matches link.kurtiswin.com (logo 64px from top on phones, clamp(80px,12vh,140px) on wider screens).
 
+- 2026-11-26: Java Bonito link page packaged for link.javabonito.com (kurtis-site/vercel/javabonito-links.zip). 'See behind the scenes' now links to link.kurtiswin.com. Java Bonito Kit form ID still needed.
+

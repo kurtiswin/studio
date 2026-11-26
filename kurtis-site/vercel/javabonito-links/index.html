@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Java Bonito · Coffee for football</title>
+<meta name="description" content="Coffee for football. Supporting dreams by giving 5% back from every coffee we sell.">
+<meta name="theme-color" content="#000000">
+<meta property="og:title" content="Java Bonito · Coffee for football">
+<meta property="og:description" content="Supporting dreams by giving 5% back from every coffee we sell.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://link.javabonito.com/">
+<meta property="og:image" content="https://link.javabonito.com/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://link.javabonito.com/og.jpg">
+<link rel="canonical" href="https://link.javabonito.com/">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="48x48" href="/jb-icon-48.png">
+<link rel="apple-touch-icon" href="/jb-apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Instrument+Serif:ital@1&display=swap">
+<style>
+:root{--bg:#000;--text:#fff;--muted:#b8b8b8;--gold:#FFC65C;--line:rgba(255,255,255,.12);
+  --sans:"Poppins",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;--serif:"Instrument Serif",Georgia,serif;color-scheme:dark}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;background:#000}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.5;overflow-x:clip;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:8px}
+.wrap{max-width:480px;margin:0 auto;padding-block:calc(64px + env(safe-area-inset-top,0px)) calc(40px + env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;align-items:center;text-align:center}
+@media(min-width:700px){.wrap{padding-top:clamp(80px,12vh,140px)}}
+
+.wordmark{display:block;width:min(300px,82%);height:auto}
+
+.label small{color:var(--muted);font-weight:300}
+.tag{margin:10px 0 0;font-size:min(.95rem,3.9vw);white-space:nowrap;font-weight:400;letter-spacing:-.035em;line-height:1.1}
+@media(min-width:1000px){.tag{font-size:clamp(.95rem,1.5vw,1.15rem)}}
+.sub{margin:10px 0 0;font-size:15px;font-weight:400;color:var(--gold);max-width:30ch;text-wrap:balance}
+.tag em{font-family:var(--serif);font-weight:400;font-style:italic;letter-spacing:-.01em;color:var(--gold);font-size:1.12em;line-height:.9}
+
+.label{margin:0;font-size:15px;font-weight:400;letter-spacing:.02em;text-transform:none;color:var(--text);text-align:left}
+svg.i{width:20px;height:20px;flex:none;color:var(--gold)}
+.signup{width:100%;margin-top:40px}
+.signup .label{margin-bottom:14px}
+form{display:flex;gap:10px}
+input{flex:1 1 0;min-width:0;height:56px;border-radius:16px;border:1px solid var(--line);background:#000;color:var(--text);padding:0 14px 0 16px;font:inherit;font-size:16px}
+input::placeholder{color:#fff;opacity:1}
+input:focus{outline:none;border-color:transparent;box-shadow:0 0 0 2px var(--gold)}
+button{height:56px;padding:0 16px 0 18px;border-radius:16px;border:0;background:#000;color:#fff;font:inherit;font-size:16px;font-weight:600;cursor:pointer;flex:0 0 auto;
+  display:inline-flex;align-items:center;gap:8px;box-shadow:0 0 0 1px var(--line);transition:box-shadow .25s ease,transform .25s cubic-bezier(.2,.7,.2,1)}
+button .arr{display:inline-block;transition:transform .25s cubic-bezier(.2,.7,.2,1)}
+button:hover{box-shadow:0 0 0 2px var(--gold);transform:translateY(-2px)}
+button:hover .arr{transform:translateX(4px)}
+button:active{transform:none}
+/* single-box email field: arrow lives inside */
+form{position:relative;display:block}
+input{width:100%;height:56px;border-radius:20px;padding:0 64px 0 20px;font-weight:600}
+input::placeholder{color:#fff;opacity:1;font-weight:600}
+form button{position:absolute;right:6px;top:6px;width:44px;height:44px;padding:0;border-radius:14px;background:transparent;box-shadow:none;color:var(--gold);justify-content:center}
+form button:hover{box-shadow:none;transform:none;color:var(--gold)}
+form button:hover .arr{transform:translateX(3px)}
+form button .arr{display:inline-flex}
+.msg{margin:14px 0 0;font-size:14px;min-height:1.4em;text-align:center;color:var(--gold)}
+.msg.err{color:#ff9d8a}
+
+.pills{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:36px}
+.pill{display:inline-flex;align-items:center;gap:9px;min-height:44px;padding:0 18px 0 14px;border-radius:999px;background:#000;box-shadow:0 0 0 1px var(--line);font-size:15px;font-weight:500;transition:box-shadow .25s ease}
+.pill:hover{box-shadow:0 0 0 2px var(--gold)}
+
+.building{margin-top:4px;width:100%}
+.building .label{margin-bottom:14px}
+.rows{display:flex;flex-direction:column;gap:12px}
+.row{display:flex;align-items:center;gap:14px;padding:12px 18px 12px 12px;border-radius:24px;background:#000;box-shadow:0 0 0 1px var(--line);text-align:left;transition:box-shadow .25s ease}
+.row:hover,.row:focus-visible{box-shadow:0 0 0 2px var(--gold)}
+.row img{width:52px;height:52px;border-radius:14px;object-fit:cover;box-shadow:0 0 0 1px var(--line);flex:none;transition:transform .45s cubic-bezier(.34,1.56,.64,1)}
+.row img.badge{object-fit:contain;padding:6px;background:#000}
+.row:hover img{transform:scale(1.12) rotate(-6deg)}
+.row .t{flex:1;min-width:0}
+.row b{display:block;font-size:16px;font-weight:500}
+.row small{display:block;margin-top:2px;font-size:13px;font-weight:300;color:var(--muted)}
+.row .go{color:var(--gold);font-size:18px;transition:transform .25s cubic-bezier(.2,.7,.2,1)}
+.row:hover .go{transform:translateX(4px)}
+
+footer{margin-top:40px;font-size:14px;color:#8f8f8f}
+
+.rise{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+.d1{animation-delay:.06s}.d2{animation-delay:.16s}.d3{animation-delay:.26s}.d4{animation-delay:.36s}.d5{animation-delay:.46s}
+@keyframes rise{from{opacity:.001;transform:translateY(18px)}}
+@media(prefers-reduced-motion:reduce){.rise{animation:none}button,button .arr,.row img,.row .go{transition:none}button:hover,.row:hover img,.row:hover .go,button:hover .arr{transform:none}}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <img class="wordmark rise d1" src="logo-jb.png" alt="Java Bonito">
+  <p class="tag rise d2"><em>Coffee</em> for football.</p>
+
+  <section class="signup rise d3" aria-labelledby="h1">
+    <h2 class="label" id="h1">Join the club for exclusive access and to be in with a chance of your dream being supported.</h2>
+    <form data-list="java-bonito" novalidate>
+      <input name="email_address" type="email" inputmode="email" autocomplete="email" aria-label="Email address" placeholder="Email" required>
+      <button type="submit" aria-label="Sign up"><span class="arr"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></span></button>
+    </form>
+    <p class="msg" role="status" aria-live="polite"></p>
+  </section>
+  <section class="building rise d4" aria-label="Links">
+    <div class="rows">
+      <a class="row" href="https://link.kurtiswin.com" target="_blank" rel="noopener"><img src="tile-kw.png" alt=""><span class="t"><b>See behind the scenes</b><small>Hear directly from the founder</small></span><span class="go" aria-hidden="true">&rarr;</span></a>
+      <a class="row" href="https://www.javabonito.co.uk" target="_blank" rel="noopener"><img src="icon-jb.png" alt=""><span class="t"><b>Shop</b><small>Coffee for football</small></span><span class="go" aria-hidden="true">&rarr;</span></a>
+      <a class="row" href="https://www.javabonito.co.uk/pages/partners" target="_blank" rel="noopener"><img src="icon-jb.png" alt=""><span class="t"><b>Business enquiries</b><small>Wholesale, clubs, facilities and partnerships</small></span><span class="go" aria-hidden="true">&rarr;</span></a>
+      <a class="row" href="https://www.javabonito.co.uk/pages/customer-enquiries" target="_blank" rel="noopener"><img src="icon-jb.png" alt=""><span class="t"><b>Customer enquiries</b><small>Orders and questions</small></span><span class="go" aria-hidden="true">&rarr;</span></a>
+    </div>
+  </section>
+
+
+</main>
+<script>
+/* Email sign-up for the Java Bonito list. Paste the Java Bonito Kit form ID between the quotes
+   (Kit > Grow > Landing Pages & Forms > form > Publish > HTML: the number in app.kit.com/forms/NUMBER/subscriptions). */
+var KIT_FORM_ID = '';
+(function(){
+  document.querySelectorAll('form[data-list]').forEach(function(f){
+    var e=f.querySelector('input'),m=f.parentNode.querySelector('.msg'),btn=f.querySelector('button');
+    f.addEventListener('submit',function(ev){
+      ev.preventDefault();
+      if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(e.value.trim())){m.className='msg err';m.textContent='That email doesn\u2019t look right. Try again?';e.focus();return;}
+      if(!KIT_FORM_ID){m.className='msg';m.textContent='Sign-ups open very soon. Check back shortly.';return;}
+      btn.disabled=true;
+      var done=function(){m.className='msg';m.textContent='You\u2019re in. Check your inbox to confirm.';};
+      fetch('https://app.kit.com/forms/'+KIT_FORM_ID+'/subscriptions',{method:'POST',mode:'no-cors',body:new FormData(f)}).then(done,done);
+    });
+  });
+})();
+</script>
+</body>
+</html>

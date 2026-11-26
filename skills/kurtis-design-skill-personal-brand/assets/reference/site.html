@@ -26,8 +26,9 @@ a{color:inherit}
 :focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:8px}
 .wrap{max-width:620px;margin:0 auto;padding-block:clamp(110px,18vh,190px) 48px;display:flex;flex-direction:column;align-items:center;text-align:center}
 
-h1{font-size:clamp(2.9rem,10.5vw,5.4rem);font-weight:600;letter-spacing:-.035em;line-height:1.02;margin:0;text-wrap:balance}
+h1{font-size:23px;font-weight:400;letter-spacing:-.035em;line-height:1.1;margin:10px 0 0;text-wrap:balance}
 h1 em{font-family:var(--serif);font-weight:400;font-style:italic;letter-spacing:-.01em;color:var(--gold);font-size:1.12em;line-height:.9}
+.wordmark{display:block;width:min(300px,82%);height:auto;margin:0}
 
 .pills{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:40px}
 .pill{display:inline-flex;align-items:center;gap:9px;min-height:44px;padding:0 18px 0 14px;border-radius:999px;background:#000;
@@ -49,7 +50,7 @@ h1 em{font-family:var(--serif);font-weight:400;font-style:italic;letter-spacing:
 .chip:hover img,.chip:focus-visible img{transform:scale(1.22) rotate(-8deg)}
 @media (prefers-reduced-motion:reduce){.chip img{transition:none}.chip:hover img,.chip:focus-visible img{transform:none}}
 
-/* Film + signup card */
+/* Signup */
 .card{width:100%;margin-top:46px;text-align:left}
 @media (min-width:900px){.card{margin-top:52px}}
 
@@ -61,7 +62,7 @@ h1 em{font-family:var(--serif);font-weight:400;font-style:italic;letter-spacing:
 @media (max-width:429px){.expect{gap:12px 18px}.expect li{gap:7px;letter-spacing:.08em;font-size:12.5px}}
 .expect svg{width:20px;height:20px;flex:none;color:var(--gold)}
 form{display:flex;gap:10px;margin-top:0}
-input{flex:1 1 0;min-width:0;height:56px;border-radius:16px;border:1px solid var(--line);background:#0a0a0a;color:var(--text);
+input{flex:1 1 0;min-width:0;height:56px;border-radius:16px;border:1px solid var(--line);background:#000;color:var(--text);
   padding:0 14px 0 16px;font:inherit;font-size:16px}
 input::placeholder{color:#8a8a8a}
 input:focus{outline:none;border-color:transparent;box-shadow:0 0 0 2px var(--gold)}
@@ -76,6 +77,14 @@ button:active{transform:translateY(0)}
 
 footer{margin-top:52px;font-size:14px;color:#8f8f8f;display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
 footer a{text-decoration:none}
+/* single-box email field: arrow lives inside */
+form{position:relative;display:block}
+input{width:100%;height:56px;border-radius:20px;padding:0 64px 0 20px;font-weight:600}
+input::placeholder{color:#fff;opacity:1;font-weight:600}
+form button{position:absolute;right:6px;top:6px;width:44px;height:44px;padding:0;border-radius:14px;background:transparent;box-shadow:none;color:var(--gold);justify-content:center}
+form button:hover{box-shadow:none;transform:none;color:var(--gold)}
+form button:hover .arr{transform:translateX(3px)}
+form button .arr{display:inline-flex}
 
 .rise{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
 .d1{animation-delay:.08s}.d2{animation-delay:.18s}.d3{animation-delay:.3s}.d4{animation-delay:.42s}
@@ -88,14 +97,8 @@ footer a{text-decoration:none}
 </head>
 <body>
 <main class="wrap" id="main">
+  <img class="wordmark rise d1" src="../icons/logo-kurtiswin.png" alt="KurtisWin">
   <h1 class="rise d1">Telling <em>beautiful</em> stories.</h1>
-
-  <nav class="pills rise d2" aria-label="Social">
-    <a class="pill" href="https://youtube.com/@kurtiswin" target="_blank" rel="noopener" aria-label="YouTube: @kurtiswin">
-      <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="4.5"/><path d="M10.2 9.2v5.6l4.8-2.8z" fill="currentColor"/></svg>@kurtiswin</a>
-    <a class="pill" href="https://www.instagram.com/kurtiswin" target="_blank" rel="noopener" aria-label="Instagram: @kurtiswin">
-      <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none"/></svg>@kurtiswin</a>
-  </nav>
 
   <p class="story rise d3">I got injured at <i>nine</i> and never got to chase the dream. So now I build things that help other people chase theirs: <a class="chip c-jb" href="https://www.javabonito.co.uk" target="_blank" rel="noopener"><img src="../icons/icon-jb.png" alt="">Java&nbsp;Bonito</a>, coffee that gives 5% back to support dreams, <a class="chip c-wfc" href="https://www.wooltonfc.co.uk" target="_blank" rel="noopener"><img class="round" src="../icons/icon-wfc.png" alt="">Woolton&nbsp;FC</a>, where I coach at the largest grassroots club in the UK, and <a class="chip c-sff" href="https://www.storiesfromfootball.co.uk" target="_blank" rel="noopener"><img src="../icons/icon-sff.png" alt="">Stories&nbsp;from&nbsp;Football</a>, because everyone has a <i>beautiful</i> story to tell.</p>
 
@@ -104,12 +107,19 @@ footer a{text-decoration:none}
       <h2 class="sr" id="join-h">Join the club</h2>
       <form data-kit>
         <label class="sr" for="a-email">Email address</label>
-        <input id="a-email" type="email" name="email_address" placeholder="name@email.com" autocomplete="email" required>
-        <button type="submit">Sign up <span class="arr" aria-hidden="true">→</span></button>
+        <input id="a-email" type="email" name="email_address" placeholder="Email" autocomplete="email" required>
+        <button type="submit" aria-label="Sign up"><span class="arr" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M14 6l6 6-6 6"/></svg></span></button>
       </form>
       <p class="ok" hidden>You're in. Check your inbox to confirm.</p>
     </div>
   </section>
+
+  <nav class="pills rise d4" aria-label="Social">
+    <a class="pill" href="https://youtube.com/@kurtiswin" target="_blank" rel="noopener" aria-label="YouTube: @kurtiswin">
+      <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="4.5"/><path d="M10.2 9.2v5.6l4.8-2.8z" fill="currentColor"/></svg>@kurtiswin</a>
+    <a class="pill" href="https://www.instagram.com/kurtiswin" target="_blank" rel="noopener" aria-label="Instagram: @kurtiswin">
+      <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none"/></svg>@kurtiswin</a>
+  </nav>
 
   <footer><span>© 2026 Kurtis Windrow</span></footer>
 </main>

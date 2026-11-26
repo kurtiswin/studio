@@ -26,6 +26,8 @@ Read before every piece of work. Add to it after every piece of work and every f
 
 - **2026-11 · Smooth, line-by-line load.** Kurtis found the first load choppy. Reveal every block and every story line one after another (0.14s apart) only after fonts and the logo have loaded, with the logo's width/height set so nothing jumps.
 
+- **2026-11 · The story reads like a letter.** One continuous paragraph, left-aligned inside the column (edges matching the email box), with the project links flowing inline. Splitting it into one line per project, and a stacked Stories from Football logo, were both rejected. Keep each project's logo in its original one-line form.
+
 ## Technical traps
 
 - **Inline icon chips look raised** when the link is `inline-flex`/`inline-grid`, and commas drift. Keep the link inline and make the icon an inline `img` at 1.4em with `vertical-align: -.36em` (Poppins), then measure.

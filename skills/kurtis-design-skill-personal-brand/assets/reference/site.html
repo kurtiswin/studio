@@ -39,9 +39,7 @@ h1 em{font-family:var(--serif);font-weight:400;font-style:italic;letter-spacing:
 .pill svg{width:20px;height:20px;flex:none;color:var(--gold);transition:color .25s}
 
 
-.story p{margin:0}
-.story .proj{margin-top:.55em}
-.story{margin:46px 0 0;font-size:clamp(1.05rem,2.4vw,1.5rem);font-weight:300;line-height:1.75;color:var(--text);width:100%;text-wrap:pretty}
+.story{margin:46px 0 0;font-size:clamp(1.05rem,2.4vw,1.5rem);font-weight:300;line-height:1.75;color:var(--text);width:100%;text-align:left;text-wrap:pretty}
 .story i{font-family:var(--serif);font-size:1.22em;line-height:1;color:var(--text)}
 .story i.gold{color:var(--gold)}
 /* Inline project links: plain inline text so commas sit right against them. */
@@ -92,6 +90,7 @@ form button .arr{display:inline-flex}
 
 /* Load: each line rises in, one after the other, once fonts and the logo are ready (no jumps). */
 html.js [data-reveal]{opacity:0;transform:translateY(14px)}
+html.js span[data-reveal]{transform:none}
 html.js.ready [data-reveal]{opacity:1;transform:none;
   transition:opacity .8s cubic-bezier(.22,.61,.36,1) var(--d,0s),transform .9s cubic-bezier(.22,.61,.36,1) var(--d,0s)}
 @media (prefers-reduced-motion:reduce){html.js [data-reveal]{transform:none}html.js.ready [data-reveal]{transition:opacity .4s linear}}
@@ -117,12 +116,7 @@ html.js.ready [data-reveal]{opacity:1;transform:none;
     </div>
   </section>
 
-  <div class="story">
-    <p data-reveal>I got injured at nine and never got to chase the dream, so now I build things that help other people chase theirs.</p>
-    <p class="proj" data-reveal><a class="chip c-jb" href="https://www.javabonito.co.uk" target="_blank" rel="noopener"><img src="../icons/icon-jb.png" alt="">Java&nbsp;Bonito</a>, coffee that gives 5% back to support dreams.</p>
-    <p class="proj" data-reveal><a class="chip c-wfc" href="https://www.wooltonfc.co.uk" target="_blank" rel="noopener"><img class="round" src="../icons/icon-wfc.png" alt="">Woolton&nbsp;FC</a>, where I coach at the largest grassroots club in the UK.</p>
-    <p class="proj" data-reveal><span class="chip c-sff"><img src="../icons/sff-logo.png" alt="">Stories&nbsp;from&nbsp;Football</span>, because everyone has a beautiful story to tell.</p>
-  </div>
+  <p class="story"><span data-reveal>I got injured at nine and never got to chase the dream, so now I build things that help other people chase theirs.</span> <span data-reveal><a class="chip c-jb" href="https://www.javabonito.co.uk" target="_blank" rel="noopener"><img src="../icons/icon-jb.png" alt="">Java&nbsp;Bonito</a>, coffee that gives 5% back to support dreams.</span> <span data-reveal><a class="chip c-wfc" href="https://www.wooltonfc.co.uk" target="_blank" rel="noopener"><img class="round" src="../icons/icon-wfc.png" alt="">Woolton&nbsp;FC</a>, where I coach at the largest grassroots club in the UK.</span> <span data-reveal><span class="chip c-sff"><img src="../icons/sff-wordmark.png" alt="">Stories&nbsp;from&nbsp;Football</span>, because everyone has a beautiful story to tell.</span></p>
 
 
   <nav class="pills" aria-label="Social" data-reveal>

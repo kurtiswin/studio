@@ -77,3 +77,5 @@
 
 - 2026-11-26: 'Telling beautiful stories.' under the logo now matches the KurtisWin Link Page: one line, min(.95rem,3.9vw), up to clamp(.95rem,1.5vw,1.15rem) on large screens.
 
+- 2026-11-26: Link page packaged for link.kurtiswin.com (kurtis-site/vercel/kurtiswin-links.zip): logo links to kurtiswin.com, Kit form 10152446, Java Bonito + Woolton FC linked, Stories from Football unlinked.
+

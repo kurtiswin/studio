@@ -81,3 +81,5 @@
 
 - 2026-11-26: Favicon for kurtiswin.com and link.kurtiswin.com is now the KurtisWin wordmark on black (favicon.ico, kw-icon-48/512, kw-apple-touch-icon).
 
+- 2026-11-26: kurtiswin.com top spacing now matches link.kurtiswin.com (logo 64px from top on phones, clamp(80px,12vh,140px) on wider screens).
+

@@ -51,7 +51,7 @@ Keep the serif to one or two words per screen; that scarcity is what makes it fe
 
 - One centred column, max 620px (the headline's width on a laptop). Headline, story, video and email form all share exactly the same left and right edges on every screen; blank space either side.
 - Side gutter at least 16px (`max(16px, env(safe-area-inset-left))`).
-- Hero sits low: top padding `clamp(110px, 18vh, 190px)`.
+- Logo sits near the top, matching the link page: 64px top padding on phones, `clamp(80px,12vh,140px)` from 700px wide.
 - Gaps: headline → pills 40px; pills → story 46px; story → card 60px (72px on laptop); card → footer 52px.
 - Hero order: headline, social pills, story with inline project links, then the film + signup card. No avatar or logo above the headline (tried and removed).
 - Footer: just "© 2026 Kurtis Windrow", 14px, muted. No privacy link or separator dot.

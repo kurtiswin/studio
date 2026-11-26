@@ -42,12 +42,12 @@ h1 em{font-family:var(--serif);font-weight:400;font-style:italic;letter-spacing:
 .story i.gold{color:var(--gold)}
 /* Inline project links: plain inline text so commas sit right against them. */
 .chip{color:var(--text);text-decoration:none;font-weight:500;white-space:nowrap}
-.chip:hover{text-decoration:underline;text-decoration-color:var(--gold);text-underline-offset:4px}
+a.chip:hover{text-decoration:underline;text-decoration-color:var(--gold);text-underline-offset:4px}
 .chip img{display:inline-block;width:1.4em;height:1.4em;margin-right:.35em;border-radius:.38em;object-fit:cover;
   vertical-align:-.36em;background:#000;box-shadow:0 0 0 1px var(--line)}
 .chip img.round{border-radius:50%;box-shadow:none}
 .chip img{transition:transform .45s cubic-bezier(.34,1.56,.64,1)}
-.chip:hover img,.chip:focus-visible img{transform:scale(1.22) rotate(-8deg)}
+a.chip:hover img,a.chip:focus-visible img{transform:scale(1.22) rotate(-8deg)}
 @media (prefers-reduced-motion:reduce){.chip img{transition:none}.chip:hover img,.chip:focus-visible img{transform:none}}
 
 /* Signup */
@@ -112,7 +112,7 @@ form button .arr{display:inline-flex}
     </div>
   </section>
 
-  <p class="story rise d3">I got injured at nine and never got to chase the dream. So now I build things that help other people chase theirs: <a class="chip c-jb" href="https://www.javabonito.co.uk" target="_blank" rel="noopener"><img src="assets/icon-jb.png" alt="">Java&nbsp;Bonito</a>, coffee that gives 5% back to support dreams, <a class="chip c-wfc" href="https://www.wooltonfc.co.uk" target="_blank" rel="noopener"><img class="round" src="assets/icon-wfc.png" alt="">Woolton&nbsp;FC</a>, where I coach at the largest grassroots club in the UK, and <a class="chip c-sff" href="https://www.storiesfromfootball.co.uk" target="_blank" rel="noopener"><img src="assets/icon-sff.png" alt="">Stories&nbsp;from&nbsp;Football</a>, because everyone has a beautiful story to tell.</p>
+  <p class="story rise d3">I got injured at nine and never got to chase the dream. So now I build things that help other people chase theirs: <a class="chip c-jb" href="https://www.javabonito.co.uk" target="_blank" rel="noopener"><img src="assets/icon-jb.png" alt="">Java&nbsp;Bonito</a>, coffee that gives 5% back to support dreams, <a class="chip c-wfc" href="https://www.wooltonfc.co.uk" target="_blank" rel="noopener"><img class="round" src="assets/icon-wfc.png" alt="">Woolton&nbsp;FC</a>, where I coach at the largest grassroots club in the UK, and <span class="chip c-sff"><img src="assets/icon-sff.png" alt="">Stories&nbsp;from&nbsp;Football</span>, because everyone has a beautiful story to tell.</p>
 
 
   <nav class="pills rise d4" aria-label="Social">

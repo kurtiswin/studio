@@ -26,7 +26,7 @@ Read before every piece of work. Add to it after every piece of work and every f
 
 - **2026-11 · Smooth, line-by-line load.** Kurtis found the first load choppy. Reveal every block and every story line one after another (0.14s apart) only after fonts and the logo have loaded, with the logo's width/height set so nothing jumps.
 
-- **2026-11 · The story reads like a letter.** One continuous paragraph, left-aligned inside the column (edges matching the email box), with the project links flowing inline. Splitting it into one line per project, and a stacked Stories from Football logo, were both rejected. Keep each project's logo in its original one-line form.
+- **2026-11 · The story reads like a letter.** One continuous centred paragraph with the project links flowing inline (left-aligned was tried and rejected). Splitting it into one line per project, and a stacked Stories from Football logo, were both rejected. Keep each project's logo in its original one-line form.
 
 ## Technical traps
 

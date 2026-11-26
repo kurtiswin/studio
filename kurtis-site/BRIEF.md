@@ -73,3 +73,5 @@
 
 - 2026-11-26: Story back to one continuous paragraph, now left-aligned within the column. Stories from Football icon back to the one-line wordmark (assets/sff-wordmark.png).
 
+- 2026-11-26: Story paragraph centred again (left-aligned rejected).
+

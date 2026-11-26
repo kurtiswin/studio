@@ -116,16 +116,14 @@ footer{margin-top:40px;font-size:14px;color:#8f8f8f}
 
 </main>
 <script>
-/* Email sign-up for the Java Bonito list. Paste the Java Bonito Kit form ID between the quotes
-   (Kit > Grow > Landing Pages & Forms > form > Publish > HTML: the number in app.kit.com/forms/NUMBER/subscriptions). */
-var KIT_FORM_ID = '';
+/* Email sign-up: sends the email to the Java Bonito Kit form 8483646. To use a different form, change the number below. */
+var KIT_FORM_ID = '8483646';
 (function(){
   document.querySelectorAll('form[data-list]').forEach(function(f){
     var e=f.querySelector('input'),m=f.parentNode.querySelector('.msg'),btn=f.querySelector('button');
     f.addEventListener('submit',function(ev){
       ev.preventDefault();
       if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(e.value.trim())){m.className='msg err';m.textContent='That email doesn\u2019t look right. Try again?';e.focus();return;}
-      if(!KIT_FORM_ID){return;}
       btn.disabled=true;
       var done=function(){m.className='msg';m.textContent='You\u2019re in. Check your inbox to confirm.';};
       fetch('https://app.kit.com/forms/'+KIT_FORM_ID+'/subscriptions',{method:'POST',mode:'no-cors',body:new FormData(f)}).then(done,done);

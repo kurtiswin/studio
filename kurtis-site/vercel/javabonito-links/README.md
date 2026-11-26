@@ -14,5 +14,4 @@ javabonito.com's DNS is NOT managed by Vercel (unlike kurtiswin.com), so this ta
 4. Wait for Vercel to show "Valid Configuration" (usually minutes, up to a few hours). HTTPS is then set up automatically.
 
 ## Email sign-up
-Not sending anywhere yet. Paste the Java Bonito Kit form ID into `var KIT_FORM_ID = '';` near the bottom of index.html.
-Until then, pressing the arrow does nothing and no message shows.
+Sign-ups go to the Java Bonito Kit form 8483646. To change it, edit `var KIT_FORM_ID` near the bottom of index.html.

@@ -63,3 +63,5 @@
 
 - 2026-11-26: Video removed from the KurtisWin site. Sign-up wired to Kit form 10152446. Vercel package at kurtis-site/vercel/kurtiswin-site.zip.
 
+- 2026-11-26: Story words 'nine' and 'beautiful' now plain Poppins Light like the rest of the sentence. Email box moved above the story paragraph.
+

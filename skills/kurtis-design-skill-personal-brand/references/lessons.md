@@ -22,6 +22,8 @@ Read before every piece of work. Add to it after every piece of work and every f
 
 - **2026-11 · New styles go in "Other ideas", never over the live site.** When Kurtis likes another creator's site, build a separate idea page in his palette and add it under KurtisWin · Other ideas on the World Building board. First one: Simple letter, after zackkravits.com.
 
+- **2026-11 · Serif italics only in the headline.** Kurtis asked for "nine" and "beautiful" in the story to match the rest of the sentence (plain Poppins Light). Keep Instrument Serif for the gold headline word only. Site order is now: logo, headline, email box, story, social pills, footer (no video).
+
 ## Technical traps
 
 - **Inline icon chips look raised** when the link is `inline-flex`/`inline-grid`, and commas drift. Keep the link inline and make the icon an inline `img` at 1.4em with `vertical-align: -.36em` (Poppins), then measure.

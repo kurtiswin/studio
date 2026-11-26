@@ -79,3 +79,5 @@
 
 - 2026-11-26: Link page packaged for link.kurtiswin.com (kurtis-site/vercel/kurtiswin-links.zip): logo links to kurtiswin.com, Kit form 10152446, Java Bonito + Woolton FC linked, Stories from Football unlinked.
 
+- 2026-11-26: Favicon for kurtiswin.com and link.kurtiswin.com is now the KurtisWin wordmark on black (favicon.ico, kw-icon-48/512, kw-apple-touch-icon).
+

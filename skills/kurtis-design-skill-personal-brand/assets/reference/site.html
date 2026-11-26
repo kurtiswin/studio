@@ -4,6 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#000000">
+<script>document.documentElement.classList.add("js")</script>
+<link rel="preload" as="image" href="../icons/logo-kurtiswin.png">
 <title>Concept A · Personal letter</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,6 +39,8 @@ h1 em{font-family:var(--serif);font-weight:400;font-style:italic;letter-spacing:
 .pill svg{width:20px;height:20px;flex:none;color:var(--gold);transition:color .25s}
 
 
+.story p{margin:0}
+.story .proj{margin-top:.55em}
 .story{margin:46px 0 0;font-size:clamp(1.05rem,2.4vw,1.5rem);font-weight:300;line-height:1.75;color:var(--text);width:100%;text-wrap:pretty}
 .story i{font-family:var(--serif);font-size:1.22em;line-height:1;color:var(--text)}
 .story i.gold{color:var(--gold)}
@@ -86,10 +90,11 @@ form button:hover{box-shadow:none;transform:none;color:var(--gold)}
 form button:hover .arr{transform:translateX(3px)}
 form button .arr{display:inline-flex}
 
-.rise{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
-.d1{animation-delay:.08s}.d2{animation-delay:.18s}.d3{animation-delay:.3s}.d4{animation-delay:.42s}
-@keyframes rise{from{opacity:.001;transform:translateY(18px)}}
-@media (prefers-reduced-motion:reduce){.rise{animation:none}}
+/* Load: each line rises in, one after the other, once fonts and the logo are ready (no jumps). */
+html.js [data-reveal]{opacity:0;transform:translateY(14px)}
+html.js.ready [data-reveal]{opacity:1;transform:none;
+  transition:opacity .8s cubic-bezier(.22,.61,.36,1) var(--d,0s),transform .9s cubic-bezier(.22,.61,.36,1) var(--d,0s)}
+@media (prefers-reduced-motion:reduce){html.js [data-reveal]{transform:none}html.js.ready [data-reveal]{transition:opacity .4s linear}}
 
 .back{position:fixed;left:max(12px,env(safe-area-inset-left,0px));bottom:calc(12px + env(safe-area-inset-bottom,0px));font-size:11px;letter-spacing:.08em;text-transform:uppercase;
   background:rgba(30,30,30,.85);backdrop-filter:blur(8px);padding:8px 12px;border-radius:999px;text-decoration:none;color:var(--muted);z-index:5}
@@ -97,10 +102,10 @@ form button .arr{display:inline-flex}
 </head>
 <body>
 <main class="wrap" id="main">
-  <img class="wordmark rise d1" src="../icons/logo-kurtiswin.png" alt="KurtisWin">
-  <h1 class="rise d1">Telling <em>beautiful</em> stories.</h1>
+  <img class="wordmark" src="../icons/logo-kurtiswin.png" alt="KurtisWin" width="720" height="160" data-reveal>
+  <h1 data-reveal>Telling <em>beautiful</em> stories.</h1>
 
-  <section class="card rise d2" id="join" aria-labelledby="join-h">
+  <section class="card" id="join" data-reveal aria-labelledby="join-h">
     <div class="signup">
       <h2 class="sr" id="join-h">Join the club</h2>
       <form data-kit>
@@ -112,17 +117,22 @@ form button .arr{display:inline-flex}
     </div>
   </section>
 
-  <p class="story rise d3">I got injured at nine and never got to chase the dream. So now I build things that help other people chase theirs: <a class="chip c-jb" href="https://www.javabonito.co.uk" target="_blank" rel="noopener"><img src="../icons/icon-jb.png" alt="">Java&nbsp;Bonito</a>, coffee that gives 5% back to support dreams, <a class="chip c-wfc" href="https://www.wooltonfc.co.uk" target="_blank" rel="noopener"><img class="round" src="../icons/icon-wfc.png" alt="">Woolton&nbsp;FC</a>, where I coach at the largest grassroots club in the UK, and <span class="chip c-sff"><img src="../icons/icon-sff.png" alt="">Stories&nbsp;from&nbsp;Football</span>, because everyone has a beautiful story to tell.</p>
+  <div class="story">
+    <p data-reveal>I got injured at nine and never got to chase the dream, so now I build things that help other people chase theirs.</p>
+    <p class="proj" data-reveal><a class="chip c-jb" href="https://www.javabonito.co.uk" target="_blank" rel="noopener"><img src="../icons/icon-jb.png" alt="">Java&nbsp;Bonito</a>, coffee that gives 5% back to support dreams.</p>
+    <p class="proj" data-reveal><a class="chip c-wfc" href="https://www.wooltonfc.co.uk" target="_blank" rel="noopener"><img class="round" src="../icons/icon-wfc.png" alt="">Woolton&nbsp;FC</a>, where I coach at the largest grassroots club in the UK.</p>
+    <p class="proj" data-reveal><span class="chip c-sff"><img src="../icons/sff-logo.png" alt="">Stories&nbsp;from&nbsp;Football</span>, because everyone has a beautiful story to tell.</p>
+  </div>
 
 
-  <nav class="pills rise d4" aria-label="Social">
+  <nav class="pills" aria-label="Social" data-reveal>
     <a class="pill" href="https://youtube.com/@kurtiswin" target="_blank" rel="noopener" aria-label="YouTube: @kurtiswin">
       <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="4.5"/><path d="M10.2 9.2v5.6l4.8-2.8z" fill="currentColor"/></svg>@kurtiswin</a>
     <a class="pill" href="https://www.instagram.com/kurtiswin" target="_blank" rel="noopener" aria-label="Instagram: @kurtiswin">
       <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none"/></svg>@kurtiswin</a>
   </nav>
 
-  <footer><span>© 2026 Kurtis Windrow</span></footer>
+  <footer data-reveal><span>© 2026 Kurtis Windrow</span></footer>
 </main>
 
 <script>
@@ -136,6 +146,17 @@ document.querySelectorAll('form[data-kit]').forEach(f=>f.addEventListener('submi
   }
   f.hidden=true; f.nextElementSibling.hidden=false;
 }));
+</script>
+<script>
+(function(){
+  var els=[].slice.call(document.querySelectorAll('[data-reveal]'));
+  els.forEach(function(el,i){el.style.setProperty('--d',(i*0.14)+'s');});
+  var logo=document.querySelector('.wordmark');
+  var logoReady=new Promise(function(res){if(!logo||logo.complete)res();else{logo.onload=logo.onerror=res;}});
+  var fonts=document.fonts&&document.fonts.ready?document.fonts.ready:Promise.resolve();
+  var go=function(){requestAnimationFrame(function(){requestAnimationFrame(function(){document.documentElement.classList.add('ready');});});};
+  Promise.race([Promise.all([fonts,logoReady]),new Promise(function(r){setTimeout(r,1500);})]).then(go,go);
+})();
 </script>
 </body>
 </html>

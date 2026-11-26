@@ -24,6 +24,8 @@ Read before every piece of work. Add to it after every piece of work and every f
 
 - **2026-11 · Serif italics only in the headline.** Kurtis asked for "nine" and "beautiful" in the story to match the rest of the sentence (plain Poppins Light). Keep Instrument Serif for the gold headline word only. Site order is now: logo, headline, email box, story, social pills, footer (no video).
 
+- **2026-11 · Smooth, line-by-line load.** Kurtis found the first load choppy. Reveal every block and every story line one after another (0.14s apart) only after fonts and the logo have loaded, with the logo's width/height set so nothing jumps.
+
 ## Technical traps
 
 - **Inline icon chips look raised** when the link is `inline-flex`/`inline-grid`, and commas drift. Keep the link inline and make the icon an inline `img` at 1.4em with `vertical-align: -.36em` (Poppins), then measure.
@@ -35,3 +37,4 @@ Read before every piece of work. Add to it after every piece of work and every f
 - **Topic rows wrap on small phones.** Three topics fit on one line from 375px with 12.5px labels and .08em spacing; check 320px and accept a centred second line.
 - **White flash when pulling past the ends on a phone.** Set `html{background:#000}` (not just `body`) and `<meta name="theme-color" content="#000000">` so the overscroll area and phone browser bar stay black. Inside the claude.ai artifact viewer the outer frame may still show its own colour.
 - **`hidden` loses to `display:grid`.** Add `[hidden]{display:none!important}` so filtered sections really hide.
+- **Year-long immutable caching kept an old icon live.** Changing `assets/icon-sff.png` didn't reach visitors because `/assets` was cached for a year. Give changed images a new file name, and keep asset caching short (1 hour) on sites that still change often.

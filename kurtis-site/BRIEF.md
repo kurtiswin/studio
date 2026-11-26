@@ -69,3 +69,5 @@
 
 - 2026-11-26: All links to storiesfromfootball.co.uk removed from the board and Simple letter idea while the domain changes.
 
+- 2026-11-26: Story split into an opening sentence plus one line per project. Stories from Football icon is the stacked wordmark (assets/sff-logo.png, new name to beat caching). Line-by-line load reveal. Asset cache cut to 1 hour.
+

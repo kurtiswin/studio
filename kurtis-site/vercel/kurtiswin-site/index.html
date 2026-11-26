@@ -60,10 +60,8 @@ h1 em{font-family:var(--serif);font-weight:400;font-style:italic;letter-spacing:
 /* Film + signup card */
 .card{width:100%;margin-top:46px;text-align:left}
 @media (min-width:900px){.card{margin-top:52px}}
-.film{position:relative;aspect-ratio:4/3;width:100%;margin:0;border-radius:24px;background:#0a0a0a;overflow:hidden}
-.film video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
 
-.signup{padding:0 0 36px}
+.signup{padding:0}
 .eyebrow{margin:0 0 18px;text-align:center;font-size:12px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .expect{list-style:none;margin:0;padding:0 0 18px;display:flex;gap:16px 26px;flex-wrap:wrap;justify-content:center;border-bottom:1px solid var(--line)}
@@ -119,17 +117,13 @@ footer a{text-decoration:none}
       </form>
       <p class="ok" hidden>You're in. Check your inbox to confirm.</p>
     </div>
-    <div class="film">
-      <video src="assets/film.mp4" poster="assets/film-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Short film: making coffee and coaching at Woolton FC"></video>
-    </div>
   </section>
 
   <footer><span>© 2026 Kurtis Windrow</span></footer>
 </main>
 <script>
-/* Email sign-up. Paste your Kit form ID between the quotes (Kit > Grow > Landing Pages & Forms > your Inline form >
-   Publish > HTML: the number in app.kit.com/forms/NUMBER/subscriptions). Until then the form only shows the thank-you message. */
-const KIT_FORM_ID = '';
+/* Email sign-up: sends the email to Kit form 10152446. To use a different form, change the number below. */
+const KIT_FORM_ID = '10152446';
 document.querySelectorAll('form[data-kit]').forEach(f=>f.addEventListener('submit',async e=>{
   e.preventDefault();
   const btn=f.querySelector('button'); btn.disabled=true;

@@ -17,6 +17,5 @@ A static site: no build step. Vercel serves `index.html` as the home page.
 ## Connect your domain
 Vercel project > Settings > Domains > add your domain, then follow the DNS records Vercel shows.
 
-## Turn on the email sign-up
-Open `index.html`, find `const KIT_FORM_ID = '';` near the bottom, and paste your Kit form ID between the quotes.
-(Kit > Grow > Landing Pages & Forms > your Inline form > Publish > HTML: the number in `app.kit.com/forms/NUMBER/subscriptions`.)
+## Email sign-up
+Sign-ups go to Kit form 10152446. To change it, edit `const KIT_FORM_ID` near the bottom of `index.html`.

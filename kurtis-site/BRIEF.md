@@ -61,3 +61,5 @@
 
 - 2026-11-11: Other ideas section added under the KurtisWin website. Idea 1 · Simple letter (idea-simple.html), in the style of zackkravits.com, in the KurtisWin palette. Live site unchanged.
 
+- 2026-11-26: Video removed from the KurtisWin site. Sign-up wired to Kit form 10152446. Vercel package at kurtis-site/vercel/kurtiswin-site.zip.
+

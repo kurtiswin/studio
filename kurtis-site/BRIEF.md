@@ -28,7 +28,7 @@
 - YouTube: https://youtube.com/@kurtiswin
 - Instagram: https://www.instagram.com/kurtiswin
 - Java Bonito: https://www.javabonito.co.uk
-- Stories from Football: https://www.storiesfromfootball.co.uk
+- Stories from Football: domain changing (old storiesfromfootball.co.uk links removed, Nov 2026)
 - Woolton FC: https://www.wooltonfc.co.uk
 
 ## Decisions log
@@ -66,4 +66,6 @@
 - 2026-11-26: Story words 'nine' and 'beautiful' now plain Poppins Light like the rest of the sentence. Email box moved above the story paragraph.
 
 - 2026-11-26: Stories from Football icon is now its wordmark logo in a black square (like Java Bonito); name no longer links anywhere while the domain changes.
+
+- 2026-11-26: All links to storiesfromfootball.co.uk removed from the board and Simple letter idea while the domain changes.
 

@@ -75,3 +75,5 @@
 
 - 2026-11-26: Story paragraph centred again (left-aligned rejected).
 
+- 2026-11-26: 'Telling beautiful stories.' under the logo now matches the KurtisWin Link Page: one line, min(.95rem,3.9vw), up to clamp(.95rem,1.5vw,1.15rem) on large screens.
+

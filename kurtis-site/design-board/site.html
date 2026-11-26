@@ -28,7 +28,8 @@ a{color:inherit}
 :focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:8px}
 .wrap{max-width:620px;margin:0 auto;padding-block:clamp(110px,18vh,190px) 48px;display:flex;flex-direction:column;align-items:center;text-align:center}
 
-h1{font-size:23px;font-weight:400;letter-spacing:-.035em;line-height:1.1;margin:10px 0 0;text-wrap:balance}
+h1{font-size:min(.95rem,3.9vw);white-space:nowrap;font-weight:400;letter-spacing:-.035em;line-height:1.1;margin:10px 0 0}
+@media(min-width:1000px){h1{font-size:clamp(.95rem,1.5vw,1.15rem)}}
 h1 em{font-family:var(--serif);font-weight:400;font-style:italic;letter-spacing:-.01em;color:var(--gold);font-size:1.12em;line-height:.9}
 .wordmark{display:block;width:min(300px,82%);height:auto;margin:0}
 

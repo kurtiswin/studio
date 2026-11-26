@@ -65,5 +65,5 @@
 
 - 2026-11-26: Story words 'nine' and 'beautiful' now plain Poppins Light like the rest of the sentence. Email box moved above the story paragraph.
 
-- 2026-11-26: Stories from Football icon recropped to fill its square; name no longer links anywhere while the domain changes.
+- 2026-11-26: Stories from Football icon is now its wordmark logo in a black square (like Java Bonito); name no longer links anywhere while the domain changes.
 

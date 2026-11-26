@@ -125,7 +125,7 @@ var KIT_FORM_ID = '';
     f.addEventListener('submit',function(ev){
       ev.preventDefault();
       if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(e.value.trim())){m.className='msg err';m.textContent='That email doesn\u2019t look right. Try again?';e.focus();return;}
-      if(!KIT_FORM_ID){m.className='msg';m.textContent='Sign-ups open very soon. Check back shortly.';return;}
+      if(!KIT_FORM_ID){return;}
       btn.disabled=true;
       var done=function(){m.className='msg';m.textContent='You\u2019re in. Check your inbox to confirm.';};
       fetch('https://app.kit.com/forms/'+KIT_FORM_ID+'/subscriptions',{method:'POST',mode:'no-cors',body:new FormData(f)}).then(done,done);

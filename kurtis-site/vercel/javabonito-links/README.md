@@ -15,4 +15,4 @@ javabonito.com's DNS is NOT managed by Vercel (unlike kurtiswin.com), so this ta
 
 ## Email sign-up
 Not sending anywhere yet. Paste the Java Bonito Kit form ID into `var KIT_FORM_ID = '';` near the bottom of index.html.
-Until then the form says "Sign-ups open very soon. Check back shortly."
+Until then, pressing the arrow does nothing and no message shows.
